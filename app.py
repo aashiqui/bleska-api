@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
 import psutil
 from flask import Flask , jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
 
+CORS(app) # This will enable CORS for all routes
 
 @app.route('/api')
 def hello():
     return "Hello World!"
 
 @app.route('/api/load')
-@crossdomain(origin='*',headers=['access-control-allow-origin','Content-Type'])
+#@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 def load():
     
     response={}
