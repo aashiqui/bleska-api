@@ -10,6 +10,7 @@ def hello():
     return "Hello World!"
 
 @app.route('/api/load')
+@crossdomain(origin='*',headers=['access-control-allow-origin','Content-Type'])
 def load():
     
     response={}
